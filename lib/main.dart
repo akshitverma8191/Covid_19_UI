@@ -12,13 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'COVID 19 UI',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        primaryColor: Colors.blueGrey[700],
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blueGrey[900],
-        ),
-      ),
       initialRoute: Routes.splash,
       onGenerateRoute: RouteGenerator.generateRoute,
     );

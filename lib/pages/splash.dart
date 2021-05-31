@@ -11,6 +11,8 @@ class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation _animation;
+  late AnimationController _containerAnimationController;
+  late Animation _containerAnimation;
   void navigateToHome() async {
     await Future.delayed(Duration(seconds: 2));
     Navigator.pop(context);
@@ -25,12 +27,23 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: Duration(milliseconds: 1500),
     );
+    _containerAnimationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 1250),
+    );
     _animation =
         CurvedAnimation(parent: _animationController, curve: Curves.bounceInOut)
           ..addListener(() {
             setState(() {});
           });
-    _animationController.forward(from: 0)..whenComplete(() => navigateToHome());
+    _containerAnimation = CurvedAnimation(
+        parent: _containerAnimationController, curve: Curves.bounceInOut)
+      ..addListener(() {
+        setState(() {});
+      });
+    _containerAnimationController.forward(from: 0)
+      ..whenComplete(() => _animationController.forward(from: 0)
+        ..whenComplete(() => navigateToHome()));
 
     //navigateToHome();
   }
@@ -43,6 +56,15 @@ class _SplashScreenState extends State<SplashScreen>
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 20),
+            height: 100 * _containerAnimationController.value,
+            width: 100 * _containerAnimationController.value,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(
+                        "https://image.flaticon.com/icons/png/128/2913/2913604.png"))),
+          ),
           Text(
             "COVID 19 APP"
                 .substring(0, (12 * _animationController.value).toInt()),
