@@ -62,8 +62,7 @@ class _SplashScreenState extends State<SplashScreen>
             width: 100 * _containerAnimationController.value,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(
-                        "https://image.flaticon.com/icons/png/128/2913/2913604.png"))),
+                    image: AssetImage("assets/images/covid.png"))),
           ),
           Text(
             "COVID 19 APP"

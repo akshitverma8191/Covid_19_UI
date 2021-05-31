@@ -168,13 +168,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               Row(
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 10),
-                                    child: Image(
-                                      image: NetworkImage(
-                                          "https://image.flaticon.com/icons/png/128/3800/3800720.png"),
-                                    ),
-                                  ),
+                                      margin: EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 10),
+                                      child: Image(
+                                          image: AssetImage(
+                                              "assets/images/graph.png"))),
                                   Expanded(
                                     child: Container(
                                       child: Column(
@@ -305,8 +303,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 horizontal: 10),
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: NetworkImage(
-                                                        "https://image.flaticon.com/icons/png/128/2958/2958080.png"))),
+                                                    image: AssetImage(
+                                                        "assets/images/social.png"))),
                                           )),
                                           Text(
                                             "Avoid Close Contact",
@@ -329,8 +327,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 horizontal: 10),
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: NetworkImage(
-                                                        "https://image.flaticon.com/icons/png/128/2966/2966482.png"))),
+                                                    image: AssetImage(
+                                                        "assets/images/hands.png"))),
                                           )),
                                           Text(
                                             "Clean your \nhands often",
@@ -353,8 +351,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 horizontal: 10),
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: NetworkImage(
-                                                        "https://image.flaticon.com/icons/png/128/3695/3695754.png"))),
+                                                    image: AssetImage(
+                                                        "assets/images/mask.png"))),
                                           )),
                                           Text(
                                             "Wear a \nfacemask",
@@ -394,8 +392,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   children: [
                                     Container(
                                       child: Image(
-                                        image: NetworkImage(
-                                            "https://image.flaticon.com/icons/png/128/754/754560.png"),
+                                        image: AssetImage(
+                                            "assets/images/mask.png"),
                                       ),
                                     ),
                                     Expanded(
